@@ -51,7 +51,6 @@ function connect(channelId) {
     });
 
     RuntimeSocket.on('WxDebug.callJS', function(message) {
-        console.log('callJS', JSON.stringify(message))
         var instanceId = message.params.args[0];
         if (message.params.method === 'createInstanceContext') {
             message.channelId = BrowserChannelId;
