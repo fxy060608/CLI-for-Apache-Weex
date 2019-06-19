@@ -107,7 +107,7 @@ export class HomeComponent extends Vue {
       } else if (data.method === 'WxDebug.pushServerVersion') {
         this.updateVersion(data.params.version)
       } else if (data.method === 'WxDebug.startDebugger') {
-        this.$router.push({ path: `/client/nvue/${data.params}?type=nvue` })
+        this.$router.push({ path: `/client/weex/${data.params}?type=weex` })
       }
     })
     this.socket.on('close', (data) => {
