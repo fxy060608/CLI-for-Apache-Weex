@@ -11,7 +11,7 @@
   <b-row class="justify-content-md-center">
     <b-col>
       <b-container class="box" :class="{ready: connectUrl}">
-        <div class="wx-home-tabs">
+        <div class="wx-home-tabs" style="display: none;">
           <div class="wx-home-tab-border">
               <div class="wx-home-tab" :class="{'active': activeType === 'debug'}" @click = "toggleType('debug')">{{$t("home.tabs.debugName")}}</div>
               <div class="wx-home-tab" :class="{'active': activeType === 'pages'}" @click = "toggleType('pages')">{{$t("home.tabs.pageName")}}</div>
