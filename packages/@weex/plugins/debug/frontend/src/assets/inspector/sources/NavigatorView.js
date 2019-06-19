@@ -277,7 +277,10 @@ Sources.NavigatorView = class extends UI.VBox {
   _addUISourceCode(uiSourceCode) {
     if (!this._acceptsUISourceCode(uiSourceCode))
       return;
-
+    //fixed by xxxxxx  
+    if(['Runtime.Android.js','Runtime.iOS.js','js-framework.js','app-service.js'].indexOf(uiSourceCode.name())!==-1){
+      return;
+    }
     const frames = Bindings.NetworkProject.framesForUISourceCode(uiSourceCode);
     if (frames.length) {
       for (const frame of frames)

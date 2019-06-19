@@ -1,8 +1,8 @@
 {
-  "name": "@weex-cli/debug-frontend",
-  "description": "Frontend project for @weex-cli/debug",
+  "name": "@dcloudio/nvue-debug-frontend",
+  "description": "Frontend project for @dcloudio/nvue-debug",
   "version": "1.0.0",
-  "author": "erha19 <faterrole@gmail.com>",
+  "author": "",
   "private": true,
   "engines": {
     "node": ">=6",

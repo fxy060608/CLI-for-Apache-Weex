@@ -231,6 +231,9 @@ debuggerRouter
       else if (config.env[message.channelId]['sourcejs']) {
         bundleUrl = config.env[message.channelId]['sourcejs']
       }
+
+      payload.params.sourceUrl = bundleUrl
+
       debuggerRouter.pushMessageByChannelId(
         'page.debugger',
         message.channelId,
@@ -271,7 +274,7 @@ debuggerRouter
           config.env[message.channelId]['polify']['sourcejs']
       }
       else {
-        config.env[message.channelId]['sourcejs'] = payload.params.sourceUrl = new MemoryFile(bundleUrl, code).getUrl()
+        config.env[message.channelId]['sourcejs'] = payload.params.sourceUrl = new MemoryFile(bundleUrl, bundleWrapper(code, transformUrlToLocalUrl(bundleUrl))).getUrl()
       }
     }
     else if (method === 'WxDebug.importScript') {

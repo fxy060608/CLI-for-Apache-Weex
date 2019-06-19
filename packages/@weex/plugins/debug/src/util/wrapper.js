@@ -61,7 +61,14 @@ const bundleWrapper = (code, sourceUrl) => {
   if (match) {
     anno = '$$frameworkFlag["' + (sourceUrl || '@') + '"]="' + match[1] + '"\n'
   }
-  return anno + bundlewrapper + code.replace(rearRegexp, '}\n$&')
+  const globalVars = `
+var WeexPlus = services.WeexPlus;
+var getUni = services.getUni;
+var getApp = services.getApp;
+var getCurrentPages = services.getCurrentPages;
+var getUniEmitter = services.getUniEmitter;
+`
+  return anno + bundlewrapper + globalVars + code.replace(rearRegexp, '}\n$&')
 }
 
 const transformUrlToLocalUrl = sourceURl => {

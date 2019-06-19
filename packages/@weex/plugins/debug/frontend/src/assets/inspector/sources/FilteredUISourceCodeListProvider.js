@@ -45,6 +45,10 @@ Sources.FilteredUISourceCodeListProvider = class extends QuickOpen.FilteredListW
    * @return {boolean}
    */
   _filterUISourceCode(uiSourceCode) {
+    //fixed by xxxxxx
+    if(['Runtime.Android.js','Runtime.iOS.js','js-framework.js','app-service.js'].indexOf(uiSourceCode.name())!==-1){
+      return;
+    }
     const binding = Persistence.persistence.binding(uiSourceCode);
     return !binding || binding.fileSystem === uiSourceCode;
   }

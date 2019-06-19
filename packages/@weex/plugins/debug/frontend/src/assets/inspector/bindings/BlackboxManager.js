@@ -72,6 +72,9 @@ Bindings.BlackboxManager = class {
       if (!item.disabled && item.pattern)
         patterns.push(item.pattern);
     }
+    //fixed by xxxxxx
+    patterns.push('js\-framework\.js$');
+    patterns.push('app\-service\.js$');
     return debuggerModel.setBlackboxPatterns(patterns);
   }
 

@@ -61,30 +61,30 @@ export class HomeComponent extends Vue {
 
   initTips () {
     this.tips = [
-      {
-        icon: 'icon-feiji',
-        title: this.$t('home.tips.quickStartTitle'),
-        des: this.$t('home.tips.quickStartDesc'),
-        url: this.$t('home.tips.quickStartUrl')
-      },
-      {
-        icon: 'icon-jiaochengicon',
-        title: this.$t('home.tips.guideTitle'),
-        des: this.$t('home.tips.guideDesc'),
-        url: this.$t('home.tips.guideUrl')
-      },
-      {
-        icon: 'icon-box',
-        title: this.$t('home.tips.integerTitle'),
-        des: this.$t('home.tips.integerDesc'),
-        url: this.$t('home.tips.integerUrl')
-      },
-      {
-        icon: 'icon-taolun',
-        title: this.$t('home.tips.helpTitle'),
-        des: this.$t('home.tips.helpDesc'),
-        url: this.$t('home.tips.helpUrl')
-      }
+      // {
+      //   icon: 'icon-feiji',
+      //   title: this.$t('home.tips.quickStartTitle'),
+      //   des: this.$t('home.tips.quickStartDesc'),
+      //   url: this.$t('home.tips.quickStartUrl')
+      // },
+      // {
+      //   icon: 'icon-jiaochengicon',
+      //   title: this.$t('home.tips.guideTitle'),
+      //   des: this.$t('home.tips.guideDesc'),
+      //   url: this.$t('home.tips.guideUrl')
+      // },
+      // {
+      //   icon: 'icon-box',
+      //   title: this.$t('home.tips.integerTitle'),
+      //   des: this.$t('home.tips.integerDesc'),
+      //   url: this.$t('home.tips.integerUrl')
+      // },
+      // {
+      //   icon: 'icon-taolun',
+      //   title: this.$t('home.tips.helpTitle'),
+      //   des: this.$t('home.tips.helpDesc'),
+      //   url: this.$t('home.tips.helpUrl')
+      // }
     ]
   }
 
@@ -107,7 +107,7 @@ export class HomeComponent extends Vue {
       } else if (data.method === 'WxDebug.pushServerVersion') {
         this.updateVersion(data.params.version)
       } else if (data.method === 'WxDebug.startDebugger') {
-        this.$router.push({ path: `/client/weex/${data.params}?type=weex` })
+        this.$router.push({ path: `/client/nvue/${data.params}?type=nvue` })
       }
     })
     this.socket.on('close', (data) => {
