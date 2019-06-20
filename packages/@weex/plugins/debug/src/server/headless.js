@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer')
+const puppeteer = require('puppeteer-cn')
 let page
 let browser = null
 const { logger } = require('../util')

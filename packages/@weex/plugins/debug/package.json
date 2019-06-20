@@ -1,6 +1,6 @@
 {
   "name": "@dcloudio/nvue-debugger",
-  "version": "0.0.104",
+  "version": "0.0.109",
   "description": "Module for debug nvue file",
   "main": "index.js",
   "scripts": {
@@ -42,7 +42,7 @@
     "koa-websocket": "^5.0.1",
     "opn": "^5.4.0",
     "parse-hosts": "^1.0.1",
-    "puppeteer": "^1.11.0",
+    "puppeteer-cn": "^0.1.8",
     "uuid": "^3.3.2",
     "yargs-parser": "^13.1.1"
   },
