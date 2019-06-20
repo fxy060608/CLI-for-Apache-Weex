@@ -1,5 +1,5 @@
 export const cn = {
-  title: 'NVue 真机调试工具',
+  title: 'uni-app 真机调试工具',
   navbar: {
     help: '帮助',
     environmentSetting: '环境设置',
@@ -7,23 +7,23 @@ export const cn = {
   },
   home: {
     languageTitle: 'Languages',
-    welcomMessage: '欢迎使用 NVue 调试工具',
+    welcomMessage: '欢迎使用 uni-app 调试工具',
     tabs: {
       debugName: '调试',
       pageName: '页面'
     },
     tips: {
       quickStartTitle: '快速使用',
-      quickStartDesc: '快速了解如何在你的开发中使用 nvue 调试工具',
-      quickStartUrl: 'http://nvue.apache.org/zh/tools/toolkit.html#debug',
+      quickStartDesc: '快速了解如何在你的开发中使用 uni-app 调试工具',
+      quickStartUrl: 'http://uni-app.apache.org/zh/tools/toolkit.html#debug',
       guideTitle: '使用教程',
       guideDesc: '详细介绍各个功能的使用说明',
-      guideUrl: 'https://nvue.apache.org/zh/guide/debug/debug.html',
-      integerTitle: '集成 NVue Devtool 到你的应用',
-      integerDesc: '了解如何在你的应用中集成 NVue Devtool SDK',
-      integerUrl: 'https://nvue.apache.org/zh/guide/debug/integrate-devtool-to-android.html',
+      guideUrl: 'https://uni-app.apache.org/zh/guide/debug/debug.html',
+      integerTitle: '集成 uni-app Devtool 到你的应用',
+      integerDesc: '了解如何在你的应用中集成 uni-app Devtool SDK',
+      integerUrl: 'https://uni-app.apache.org/zh/guide/debug/integrate-devtool-to-android.html',
       helpTitle: '帮助和意见反馈',
-      helpDesc: '提交Github issue 和帮助提高 NVue Devtool',
+      helpDesc: '提交Github issue 和帮助提高 uni-app Devtool',
       helpUrl: 'https://github.com/weexteam/weex-toolkit/issues/new?labels=@weex-cli/debug',
       noJsBundle: '暂无可预览页面，你可以通过下面的命令进行页面编译'
     },
@@ -38,7 +38,7 @@ export const cn = {
     pageDescription: '页面正在施工中...'
   },
   weexDebugPage: {
-    title: 'NVue 调试',
+    title: 'uni-app 调试',
     appInfo: '应用信息',
     sdkVersion: 'SDK版本',
     jsDebug: 'JS调试',
@@ -47,9 +47,9 @@ export const cn = {
     elementMode: '切换视图',
     clearHistory: '清空历史',
     workerJsDesc: 'WorkerJS为调试中间文件，文件开头为[Runtime]-的文件',
-    jsServiceDesc: 'JSService是nvue在运行中使用<a href="http://nvue.apache.org/cn/references/js-service.html" target="_blank">JSService接口</a>注入的JS文件，多个文件用逗号隔开',
-    dependenceJsDesc: 'DependenceJS是nvue在创建实例前在JS环境中注入的JS文件',
-    jsFrameworkDesc: 'JSFramework是为nvue运行提供初始环境的JS',
+    jsServiceDesc: 'JSService是uni-app在运行中使用<a href="http://uni-app.apache.org/cn/references/js-service.html" target="_blank">JSService接口</a>注入的JS文件，多个文件用逗号隔开',
+    dependenceJsDesc: 'DependenceJS是uni-app在创建实例前在JS环境中注入的JS文件',
+    jsFrameworkDesc: 'JSFramework是为uni-app运行提供初始环境的JS',
     environmentSettingOkDesc: '更改设置',
     environmentSettingCancelDesc: '重置',
     reloadDesc: '刷新',
@@ -71,7 +71,7 @@ export const cn = {
   },
   sideBar: {
     weex: {
-      title: 'NVUE 调试'
+      title: 'uni-app 调试'
     },
     analyze: {
       title: '性能面板'
@@ -80,9 +80,9 @@ export const cn = {
   tour: {
     step_1: '点击这里可以控制<strong>JS Debug</strong>开关，开启后即可开始JS调试!',
     step_2: '点击这里可以选择Log日志等级',
-    step_3: '进入调试页面后点击这里可以刷新NVue页面',
+    step_3: '进入调试页面后点击这里可以刷新uni-app页面',
     step_4: '在这里可以输入你本地想访问的JSBundle文件，回车键跳转',
-    step_5: '点击这里可以针对NVue运行环境进行配置',
+    step_5: '点击这里可以针对uni-app运行环境进行配置',
     step_6: '点击这里可以对文件进行Mock替换',
     step_7: '点击这里可以让环境配置生效',
     step_8: '点击这里重置环境',

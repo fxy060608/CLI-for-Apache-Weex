@@ -1,7 +1,7 @@
 {
-  "name": "@dcloudio/nvue-debugger",
-  "version": "0.0.109",
-  "description": "Module for debug nvue file",
+  "name": "@dcloudio/uni-debugger",
+  "version": "0.0.100",
+  "description": "uni-app debugger",
   "main": "index.js",
   "scripts": {
     "format": "eslint ./src --fix",
@@ -22,7 +22,7 @@
   ],
   "license": "MIT",
   "bin": {
-    "nvue": "./bin/debug.js"
+    "uni-app": "./bin/debug.js"
   },
   "dependencies": {
     "boxen": "^2.1.0",
@@ -42,6 +42,7 @@
     "koa-websocket": "^5.0.1",
     "opn": "^5.4.0",
     "parse-hosts": "^1.0.1",
+    "puppeteer": "^1.17.0",
     "puppeteer-cn": "^0.1.8",
     "uuid": "^3.3.2",
     "yargs-parser": "^13.1.1"

@@ -274,7 +274,7 @@ self.__updateComponentData = function(instance, componentId, data) {
 };
 
 self.nativeLog = function(args) {
-    self.console.log(args)
+    // self.console.log(args)
 };
 
 importScripts('/source/js-framework.js');

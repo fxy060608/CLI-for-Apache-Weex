@@ -1,6 +1,6 @@
 {
-  "name": "@dcloudio/nvue-debug-frontend",
-  "description": "Frontend project for @dcloudio/nvue-debug",
+  "name": "@dcloudio/uniapp-debug-frontend",
+  "description": "Frontend project for @dcloudio/uniapp-debugger",
   "version": "1.0.0",
   "author": "",
   "private": true,
