@@ -1,6 +1,6 @@
 {
   "name": "@dcloudio/uni-debugger",
-  "version": "0.0.10５",
+  "version": "0.0.105",
   "description": "uni-app debugger",
   "main": "index.js",
   "scripts": {
