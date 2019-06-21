@@ -1,4 +1,4 @@
-const opn = require('opn')
+const opn = require('chrome-opn')
 
 const pendingList = []
 let pending = false
