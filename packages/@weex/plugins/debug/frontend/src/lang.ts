@@ -6,8 +6,8 @@ import { cn } from './langs/cn'
 Vue.use(VueI18n)
 
 export default new VueI18n({
-  locale: localStorage.getItem('language') || 'en',
-  fallbackLocale: 'en',
+  locale: localStorage.getItem('language') || 'cn',
+  fallbackLocale: 'cn',
   messages: {
     en, cn
   }

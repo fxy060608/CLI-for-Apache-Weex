@@ -22,3 +22,5 @@ frontend/runtime/runtime.html
 frontend/src/index.html
 frontend/src/components/navbar/navbar.html
 frontend/src/views/home/home.ts
+frontend/src/lang.ts
+frontend/src/util/env.js

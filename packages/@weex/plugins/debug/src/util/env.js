@@ -10,7 +10,14 @@ const PROGRAMS = {
     getVersion: runVersionCommand.bind(null, 'npm --version')
   },
   weex: {
-    getVersion: runVersionCommand.bind(null, 'weex --version')
+    getVersion: function getVersion(command,callback){
+      let version = 'unknown'
+      try{
+        version = '2.0.2'//require('../../../../../../uniapp-cli/node-modules/@dcloudio/webpack-uni-pages-loader/package.json')['uni-app']['compilerVersion']
+      }catch(e){
+      }
+      return callback({version})
+    }
   }
 }
 

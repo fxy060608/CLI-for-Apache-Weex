@@ -236,6 +236,7 @@ export class WeexComponent extends Vue {
   }
 
   mounted () {
+    localStorage.setItem('hasBeenTour', 'true') //fixed by xxxxxx 禁用指南
     this.initWebSocket()
     this.$store.commit(types.UPDATE_CHANNEL_ID, this.channelId)
     if (!localStorage.getItem('hasBeenTour')) {
@@ -280,7 +281,7 @@ export class WeexComponent extends Vue {
           }
           this.bundles = data.params.bundles
           this.userAgent = name + '@' + device.model
-          this.appVersion = 'v ' + device.weexVersion + ' - ' + device.platform + ' (inspector ' + device.devtoolVersion + ')'
+          this.appVersion = 'v ' + device.weexVersion + ' - ' + device.platform// + ' (inspector ' + device.devtoolVersion + ')'
           this.updateForm({ type: types.UPDATE_REMOTE_DEBUG_STATUS, value: typeof (device.remoteDebug) === 'undefined' ? sessionStorage.getItem('remoteDebug') === 'true' : device.remoteDebug })
           this.updateForm({ type: types.UPDATE_NETWORK_STATUS, value: typeof (device.network) === 'undefined' ? sessionStorage.getItem('network') === 'true' : device.network })
           this.updateForm({ type: types.UPDATE_LOG_LEVEL_STATUS, value: device.logLevel || 'debug' })

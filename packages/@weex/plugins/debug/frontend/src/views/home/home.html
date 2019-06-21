@@ -1,5 +1,5 @@
 <b-container class="wx-home-content">
-  <div class="language">
+  <div class="language" style="display: none;">
     <div class="language-title">
       {{$t('home.languageTitle')}} <span class="iconfont icon-xiala"></span>
     </div>
@@ -20,13 +20,13 @@
         <div v-if="activeType === 'debug'">
           <b-row>
             <div class="qrcode-box">
-              <div class="qrcode">
-                <qrcode :value="connectUrl" :title="connectUrl" :size="200"></qrcode>
+              <div class="qrcode" style="width: 100px;height: 100px;">
+                <!-- <qrcode :value="connectUrl" :title="connectUrl" :size="200"></qrcode> -->
               </div>
             </div>
           </b-row>
-          <b-row class="header">
-            <img class='logo' src="" alt="">
+          <b-row class="header" style="height: 80px;">
+            <!-- <img class='logo' style="display: none;" src="" alt=""> -->
             <div class="title">
               {{$t("home.welcomMessage")}}
             </div>
