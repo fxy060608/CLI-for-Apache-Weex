@@ -281,6 +281,9 @@ export class WeexComponent extends Vue {
           }
           this.bundles = data.params.bundles
           this.userAgent = name + '@' + device.model
+           + '　　　　uni-app: ' + (device['uni-app'] && device['uni-app']['compilerVersion'] || 'unspecified')
+           + '　　　　weex: '+ device.weexVersion
+          
           this.appVersion = 'v ' + device.weexVersion + ' - ' + device.platform// + ' (inspector ' + device.devtoolVersion + ')'
           this.updateForm({ type: types.UPDATE_REMOTE_DEBUG_STATUS, value: typeof (device.remoteDebug) === 'undefined' ? sessionStorage.getItem('remoteDebug') === 'true' : device.remoteDebug })
           this.updateForm({ type: types.UPDATE_NETWORK_STATUS, value: typeof (device.network) === 'undefined' ? sessionStorage.getItem('network') === 'true' : device.network })
