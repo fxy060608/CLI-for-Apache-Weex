@@ -32,3 +32,4 @@ frontend/src/util/env.js
 sourcemap
 element
 uni 全局调用
+network

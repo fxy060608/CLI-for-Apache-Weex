@@ -302,7 +302,16 @@ Console.ConsoleViewMessage = class {
     } else if (this._message.url && this._message.url !== 'undefined') {
       anchorElement = this._linkifyLocation(this._message.url, this._message.line, this._message.column);
     }
-
+    //fixed by xxxxxx
+    if(
+      anchorElement && 
+      (
+        anchorElement.innerText.indexOf('js-framework.js') === 0 ||
+        anchorElement.innerText.indexOf('app-service.js') === 0
+      )
+    ){
+      return null;
+    }
     // Append a space to prevent the anchor text from being glued to the console message when the user selects and copies the console messages.
     if (anchorElement) {
       const anchorWrapperElement = createElementWithClass('span', 'console-message-anchor');
