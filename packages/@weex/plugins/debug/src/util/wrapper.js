@@ -59,15 +59,9 @@ const bundleWrapper = (code, sourceUrl) => {
   const match = /^\/\/\s?{\s?"framework"\s?:\s?"(\w+)"\s?}/.exec(code)
   let anno = ''
   if (match) {
-    anno = '$$frameworkFlag["' + (sourceUrl || '@') + '"]="' + match[1] + '"\n'
+    anno = '$$frameworkFlag["' + (sourceUrl || '@') + '"]="' + match[1] + '";'
   }
-  const globalVars = `
-var WeexPlus = services.WeexPlus;
-var getUni = services.getUni;
-var getApp = services.getApp;
-var getCurrentPages = services.getCurrentPages;
-var getUniEmitter = services.getUniEmitter;
-`
+  const globalVars = `var WeexPlus = services.WeexPlus;var getUni = services.getUni;var getApp = services.getApp;var getCurrentPages = services.getCurrentPages;var getUniEmitter = services.getUniEmitter;`
   return anno + bundlewrapper + globalVars + code.replace(rearRegexp, '}\n$&')
 }
 

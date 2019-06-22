@@ -927,6 +927,10 @@ Network.NetworkLogView = class extends UI.VBox {
     while (this._staleRequests.size) {
       const request = this._staleRequests.firstValue();
       this._staleRequests.delete(request);
+      //fixe by xxxxxx
+      if(['js-framework.js','app-service.js'].indexOf(request.displayName) !== -1){
+        continue
+      }
       let node = request[Network.NetworkLogView._networkNodeSymbol];
       if (!node)
         node = this._createNodeForRequest(request);

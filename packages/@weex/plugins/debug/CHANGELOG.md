@@ -15,6 +15,7 @@ frontend/src/assets/inspector/bindings/BlackboxManager.js
     patterns.push('app\-service\.js$')
 frontent/src/assets/inspector/sources/FilteredUISourceCodeListProvider.js
 frontent/src/assets/inspector/sources/NavigatorView.js
+frontent/src/assets/inspector/network/NetworkLogView.js
 
 
 其他 Weex => Nvue,隐藏元素
@@ -24,3 +25,10 @@ frontend/src/components/navbar/navbar.html
 frontend/src/views/home/home.ts
 frontend/src/lang.ts
 frontend/src/util/env.js
+
+
+
+
+sourcemap
+element
+uni 全局调用
