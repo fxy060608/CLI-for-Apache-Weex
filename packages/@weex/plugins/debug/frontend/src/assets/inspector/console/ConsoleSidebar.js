@@ -185,6 +185,13 @@ Console.ConsoleSidebar.FilterTreeElement = class extends UI.TreeElement {
         message.type !== SDK.ConsoleMessage.MessageType.Result && !message.isGroupMessage();
     if (!this._filter.shouldBeVisible(viewMessage) || !shouldIncrementCounter)
       return;
+    //fixed by xxxxxx  
+    if(
+      message.url.indexOf('js-framework.js') !== -1 ||
+      message.url.indexOf('app-service.js') !== -1
+    ){
+      return;
+    }
     const child = this._childElement(message.url);
     child.incrementAndUpdateCounter();
     this._messageCount++;

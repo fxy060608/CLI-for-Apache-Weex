@@ -205,6 +205,21 @@ Console.ConsoleViewMessage = class {
   _buildMessage() {
     let messageElement;
     let messageText = this._message.messageText;
+    
+    //fixed by xxxxxx 移除 at App.vue:39
+    if(Array.isArray(this._message.parameters)){
+      const lastParameter = this._message.parameters[this._message.parameters.length-1]
+      if(
+        lastParameter &&
+        lastParameter.type === 'string' &&
+        lastParameter.value &&
+        lastParameter.value.indexOf(' at ') === 0 &&
+        lastParameter.value.indexOf(':') !== -1
+      ){
+        this._message.parameters.pop()
+      }
+    }
+    
     if (this._message.source === SDK.ConsoleMessage.MessageSource.ConsoleAPI) {
       switch (this._message.type) {
         case SDK.ConsoleMessage.MessageType.Trace:
