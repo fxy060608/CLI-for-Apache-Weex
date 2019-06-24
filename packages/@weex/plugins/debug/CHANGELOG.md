@@ -17,6 +17,8 @@ frontent/src/assets/inspector/sources/FilteredUISourceCodeListProvider.js
 frontent/src/assets/inspector/sources/NavigatorView.js
 frontent/src/assets/inspector/network/NetworkLogView.js
 
+frontent/src/assets/inspector/components/Linkifier.js
+
 
 其他 Weex => Nvue,隐藏元素
 frontend/runtime/runtime.html

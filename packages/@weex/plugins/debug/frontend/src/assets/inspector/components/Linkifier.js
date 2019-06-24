@@ -151,6 +151,14 @@ Components.Linkifier = class {
   maybeLinkifyScriptLocation(target, scriptId, sourceURL, lineNumber, columnNumber, classes) {
     let fallbackAnchor = null;
     if (sourceURL) {
+      if(
+        sourceURL.indexOf('js-framework.js') !== -1 ||
+        sourceURL.indexOf('app-service.js') !== -1 ||
+        sourceURL.indexOf('Runtime.Android.js') !== -1 ||
+        sourceURL.indexOf('Runtime.iOS.js') !== -1
+      ){
+        return null
+      }
       fallbackAnchor = Components.Linkifier.linkifyURL(
           sourceURL,
           {className: classes, lineNumber: lineNumber, columnNumber: columnNumber, maxLength: this._maxLength});
@@ -190,6 +198,14 @@ Components.Linkifier = class {
    * @return {!Element}
    */
   linkifyScriptLocation(target, scriptId, sourceURL, lineNumber, columnNumber, classes) {
+    if(
+      sourceURL.indexOf('js-framework.js') !== -1 ||
+      sourceURL.indexOf('app-service.js') !== -1 ||
+      sourceURL.indexOf('Runtime.Android.js') !== -1 ||
+      sourceURL.indexOf('Runtime.iOS.js') !== -1
+    ){
+      return document.createElement('span');
+    }
     const scriptLink = this.maybeLinkifyScriptLocation(target, scriptId, sourceURL, lineNumber, columnNumber, classes);
     return scriptLink ||
         Components.Linkifier.linkifyURL(
@@ -336,6 +352,17 @@ Components.Linkifier = class {
    * @return {!Element}
    */
   static linkifyURL(url, options) {
+    if(
+      url &&
+      (
+        url.indexOf('js-framework.js') !== -1 ||
+        url.indexOf('app-service.js') !== -1 ||
+        url.indexOf('Runtime.Android.js') !== -1 ||
+        url.indexOf('Runtime.iOS.js') !== -1
+      )
+    ){
+      return document.createElement('span');
+    }
     options = options || {};
     const text = options.text;
     const className = options.className || '';
