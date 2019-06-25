@@ -201,7 +201,18 @@ Sources.CallStackSidebarPane = class extends UI.SimpleView {
         const uiLocation = liveLocation.uiLocation();
         if (!uiLocation)
           return;
-        const text = uiLocation.linkText();
+        //fixed by xxxxxx  
+        // const text = uiLocation.linkText();
+        let text = uiLocation.linkText();
+        if(
+          text.indexOf('js-framework.js') !== -1 ||
+          text.indexOf('app-service.js') !== -1 ||
+          text.indexOf('Runtime.Android.js') !== -1 ||
+          text.indexOf('Runtime.iOS.js') !== -1
+        ){
+          element.classList.add('blackboxed-call-frame');
+          text = '';
+        }
         linkElement.textContent = text.trimMiddle(30);
         linkElement.title = text;
       }
@@ -343,6 +354,19 @@ Sources.CallStackSidebarPane = class extends UI.SimpleView {
       return;
     if (item.debuggerCallFrame && UI.context.flavor(SDK.DebuggerModel.CallFrame) !== item.debuggerCallFrame) {
       item.debuggerModel.setSelectedCallFrame(item.debuggerCallFrame);
+      //fixed by xxxxxx
+      const sourceURL = item.debuggerCallFrame._script && item.debuggerCallFrame._script.sourceURL;
+      if(
+        sourceURL && 
+        (
+          sourceURL.indexOf('js-framework.js') !== -1 ||
+          sourceURL.indexOf('app-service.js') !== -1 ||
+          sourceURL.indexOf('Runtime.Android.js') !== -1 ||
+          sourceURL.indexOf('Runtime.iOS.js') !== -1
+        )
+      ){
+        return;
+      }
       UI.context.setFlavor(SDK.DebuggerModel.CallFrame, item.debuggerCallFrame);
     } else {
       Common.Revealer.reveal(Bindings.debuggerWorkspaceBinding.rawLocationToUILocation(location));

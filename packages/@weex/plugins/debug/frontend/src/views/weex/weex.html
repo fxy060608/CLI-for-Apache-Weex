@@ -54,14 +54,29 @@
       </div>
     </div>
   </div>
-  <div class="wx-debug-weex-inspector">
-    <b-embed type="iframe" aspect="none" :src="inspectorUrl"></b-embed>
-  </div>
   <div class="wx-debug-weex-menu">
     <div class="wx-debug-weex-container" fluid>
-
       <div class="wx-debug-weex-row">
-        <div class="wx-debug-weex-col navigation" style="display: none;">
+        <div class="wx-debug-weex-col" style="padding-right: 30px;">
+          <span class="iconfont icon-icon" style="font-size: 20px;" @click="reload($event)" :title="$t('weexDebugPage.reloadDesc')" data-v-step="3"></span>
+        </div>
+        <div class="wx-debug-weex-col info" style="flex: 1;">
+          <div class="label">{{$t('weexDebugPage.appInfo')}}</div>
+          <span :title="userAgent" style="width:100%">{{userAgent}}</span>
+        </div>
+        <div class="wx-debug-weex-col switch">
+          <div class="label">{{$t('weexDebugPage.jsDebug')}}</div>
+          <toggle-button data-v-step="1" :value="remoteDebugStatus" @change="handleRemoteDebug($event)" color="#f37327" :sync="true" :width="50" :height="24"
+            :labels="true" />
+        </div>
+        <div class="switch wx-debug-weex-col">
+          <div class="label">{{$t('weexDebugPage.network')}}</div>
+          <toggle-button :value="networkStatus" @change="handleNetwork($event)" color="#f37327" :width="50" :height="24" :sync="true"
+            :labels="true" />
+        </div>
+      </div>
+      <div class="wx-debug-weex-row" style="display: none;">
+        <div class="wx-debug-weex-col navigation">
           <input v-model="sourcejs" type="text" class="bundleurl" placeholder="http://" @keyup.enter="navigator(sourcejs)" :disabled="!isSandbox" data-v-step="4">
           <span class="iconfont icon-huifu" @click="restore($event)" :title="$t('weexDebugPage.restoreDesc')"></span>
           <span class="iconfont icon-icon" @click="reload($event)" :title="$t('weexDebugPage.reloadDesc')" data-v-step="3"></span>
@@ -70,18 +85,18 @@
           <div class="label">{{$t('weexDebugPage.appInfo')}}</div>
           <span :title="userAgent" style="width:100%">{{userAgent}}</span>
         </div>
-        <div class="wx-debug-weex-col switch" style="display: none;">
+        <div class="wx-debug-weex-col switch">
           <div class="label">{{$t('weexDebugPage.jsDebug')}}</div>
           <toggle-button data-v-step="1" :value="remoteDebugStatus" @change="handleRemoteDebug($event)" color="#f37327" :sync="true" :width="50" :height="24"
             :labels="true" />
         </div>
-        <div class="wx-debug-weex-col select" style="display: none;">
+        <div class="wx-debug-weex-col select">
           <div class="label">{{$t('weexDebugPage.logLevel')}}</div>
           <b-form-select v-model="logLevelSelected" data-v-step="2" :options="logLevelOptions" size="sm" class="wx-debug-weex-select"></b-form-select>
         </div>
       </div>
       <div class="wx-debug-weex-row" style="display: none;">
-        <div class="wx-debug-weex-col navigation-button" style="display: none;">
+        <div class="wx-debug-weex-col navigation-button">
           <div class="navigation-selection">
             <div class="text">{{historyLatestUrl}}</div>
             <div class="navigation-selection-items">
@@ -98,17 +113,20 @@
           <span>{{appVersion}}
           </span>
         </div>
-        <div class="switch wx-debug-weex-col" style="display: none;">
+        <div class="switch wx-debug-weex-col">
           <div class="label">{{$t('weexDebugPage.network')}}</div>
           <toggle-button :value="networkStatus" @change="handleNetwork($event)" color="#f37327" :width="50" :height="24" :sync="true"
             :labels="true" />
         </div>
-        <div class="wx-debug-weex-col select" style="display: none;">
+        <div class="wx-debug-weex-col select">
           <div class="label">{{$t('weexDebugPage.elementMode')}}</div>
           <b-form-select v-model="elementModeSelected" :options="elementModeOptions" size="sm" class="wx-debug-weex-select"></b-form-select>
         </div>
       </div>
     </div>
+  </div>
+  <div class="wx-debug-weex-inspector">
+    <b-embed type="iframe" aspect="none" :src="inspectorUrl"></b-embed>
   </div>
   <b-modal hide-backdrop v-model="modalShow" size="lg" hide-footer hide-title class="wx-debug-weex-modal">
       <div>

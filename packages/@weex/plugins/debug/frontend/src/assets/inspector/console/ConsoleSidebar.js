@@ -187,8 +187,11 @@ Console.ConsoleSidebar.FilterTreeElement = class extends UI.TreeElement {
       return;
     //fixed by xxxxxx  
     if(
-      message.url.indexOf('js-framework.js') !== -1 ||
-      message.url.indexOf('app-service.js') !== -1
+      message.url && 
+      (
+        message.url.indexOf('js-framework.js') !== -1 ||
+        message.url.indexOf('app-service.js') !== -1
+      )
     ){
       return;
     }
