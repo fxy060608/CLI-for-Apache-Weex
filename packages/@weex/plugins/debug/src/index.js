@@ -71,7 +71,7 @@ exports.launch = function (ip, port) {
       headless.launchHeadless(`${config.ip}:${config.port}`, open)
     })
   }
-  launcher.launchChrome(debuggerURL, config.REMOTE_DEBUG_PORT || 9222)
+  // launcher.launchChrome(debuggerURL, config.REMOTE_DEBUG_PORT || 9222)
 }
 
 exports.reload = function () {

@@ -74,7 +74,7 @@
           <toggle-button data-v-step="1" :value="remoteDebugStatus" @change="handleRemoteDebug($event)" color="#f37327" :sync="true" :width="50" :height="24"
             :labels="true" />
         </div>
-        <div class="switch wx-debug-weex-col">
+        <div class="switch wx-debug-weex-col" style="display: none;">
           <div class="label">{{$t('weexDebugPage.network')}}</div>
           <toggle-button :value="networkStatus" @change="handleNetwork($event)" color="#f37327" :width="50" :height="24" :sync="true"
             :labels="true" />
