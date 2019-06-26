@@ -1409,6 +1409,10 @@ SDK.DOMModel = class extends SDK.SDKModel {
    */
   _childNodeInserted(parentId, prevId, payload) {
     const parent = this._idToDOMNode[parentId];
+    //fixed by xxxxxx
+    if(!parent){
+      return;
+    }
     const prev = this._idToDOMNode[prevId];
     const node = parent._insertChild(prev, payload);
     this._idToDOMNode[node.id] = node;
@@ -1422,6 +1426,10 @@ SDK.DOMModel = class extends SDK.SDKModel {
    */
   _childNodeRemoved(parentId, nodeId) {
     const parent = this._idToDOMNode[parentId];
+    //fixed by xxxxxx
+    if(!parent){
+      return;
+    }
     const node = this._idToDOMNode[nodeId];
     parent._removeChild(node);
     this._unbind(node);

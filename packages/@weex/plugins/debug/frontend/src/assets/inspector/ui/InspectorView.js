@@ -77,7 +77,8 @@ UI.InspectorView = class extends UI.VBox {
     // Create main area tabbed pane.
     this._tabbedLocation = UI.viewManager.createTabbedLocation(
         InspectorFrontendHost.bringToFront.bind(InspectorFrontendHost), 'panel', true, true,
-        Runtime.queryParam('panel'));
+        'elements');//Runtime.queryParam('panel')
+        //fixed by xxxxxx
 
     this._tabbedPane = this._tabbedLocation.tabbedPane();
     this._tabbedPane.registerRequiredCSS('ui/inspectorViewTabbedPane.css');

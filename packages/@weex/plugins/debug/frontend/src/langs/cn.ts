@@ -38,6 +38,7 @@ export const cn = {
     pageDescription: '页面正在施工中...'
   },
   weexDebugPage: {
+    screencast: '屏幕预览',
     title: 'uni-app 调试',
     appInfo: '应用信息',
     sdkVersion: 'SDK版本',

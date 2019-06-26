@@ -27,8 +27,11 @@ Screencast.ScreencastApp = class {
         // SDK.targetManager.observeModels(SDK.ScreenCaptureModel, this);
       }
       else {
-        this._enabledSetting = Common.settings.createSetting('screencastEnabled', true);
+        //fixed by xxxxxx
+        this._enabledSetting = Common.settings.createSetting('screencastEnabled', false);
+        // this._enabledSetting.set(false);
         this._toggleButton = new UI.ToolbarToggle(Common.UIString('Toggle screencast'), 'largeicon-phone');
+        this._toggleButton.element.style.display = 'none'
         this._toggleButton.setToggled(this._enabledSetting.get());
         this._toggleButton.setEnabled(false);
         this._toggleButton.addEventListener(UI.ToolbarButton.Events.Click, this._toggleButtonClicked, this);

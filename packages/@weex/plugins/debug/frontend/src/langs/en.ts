@@ -38,6 +38,7 @@ export const en = {
     pageDescription: 'The page is under development...'
   },
   weexDebugPage: {
+    screencast: 'Screencast',
     title: 'uni-app Debug',
     appInfo: 'APP Info',
     sdkVersion: 'SDK Version',

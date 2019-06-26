@@ -45,6 +45,7 @@ export class WeexComponent extends Vue {
   @Module.State('instanceUrl') instanceUrl
   @Module.State('historys') historys
   @Module.State('environment') environment
+  screencastStatus: boolean = false
   bundleurl: string = ''
   bundles: string[] = []
   mockCode: string = ''
@@ -236,6 +237,7 @@ export class WeexComponent extends Vue {
   }
 
   mounted () {
+    localStorage.setItem('screencastEnabled', 'false') //fixed by xxxxxx screencastEnabled
     localStorage.setItem('hasBeenTour', 'true') //fixed by xxxxxx 禁用指南
     this.initWebSocket()
     this.$store.commit(types.UPDATE_CHANNEL_ID, this.channelId)
@@ -344,6 +346,24 @@ export class WeexComponent extends Vue {
     this.inspectorUrl = `../../assets/inspector/inspector.html?ws=${this.webSocketHost}/debugProxy/inspector/${this.channelId}`
   }
 
+  handleScreencast ($event) {
+    this.screencastStatus = !!$event.value
+    const ifr = document.querySelector('iframe')
+    if(!ifr){
+      return
+    }
+    const mainElem: HTMLElement = ifr.contentDocument.querySelector('.tabbed-pane.insertion-point-main') as HTMLElement
+    if(!mainElem || !mainElem.shadowRoot){
+      return
+    }
+    const toolbarElem: HTMLElement = mainElem.shadowRoot.querySelector('.tabbed-pane-left-toolbar') as HTMLElement
+    if(!toolbarElem || !toolbarElem.shadowRoot){
+      return
+    }
+    const scElem: HTMLElement = toolbarElem.shadowRoot.querySelectorAll('.toolbar-button')[1] as HTMLElement
+    scElem && scElem.click()
+  }
+  
   handleRemoteDebug ($event) {
     this.updateForm({ type: types.UPDATE_REMOTE_DEBUG_STATUS, value: $event.value })
     this.socket.send(JSON.stringify({ method: 'WxDebug.' + ($event.value ? 'enable' : 'disable') }))

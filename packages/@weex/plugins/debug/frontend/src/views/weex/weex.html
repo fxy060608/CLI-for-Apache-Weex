@@ -65,6 +65,11 @@
           <span :title="userAgent" style="width:100%">{{userAgent}}</span>
         </div>
         <div class="wx-debug-weex-col switch">
+          <div class="label">{{$t('weexDebugPage.screencast')}}</div>
+          <toggle-button :value="screencastStatus" @change="handleScreencast($event)" color="#f37327" :sync="true" :width="50" :height="24"
+            :labels="true" />
+        </div>
+        <div class="wx-debug-weex-col switch">
           <div class="label">{{$t('weexDebugPage.jsDebug')}}</div>
           <toggle-button data-v-step="1" :value="remoteDebugStatus" @change="handleRemoteDebug($event)" color="#f37327" :sync="true" :width="50" :height="24"
             :labels="true" />
