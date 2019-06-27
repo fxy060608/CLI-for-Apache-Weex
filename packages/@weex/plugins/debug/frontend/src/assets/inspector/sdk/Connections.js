@@ -138,6 +138,11 @@ SDK.WebSocketConnection = class {
    * @param {string} message
    */
   sendMessage(message) {
+    //fixed by xxxxxx Android 指令有差异
+    message = message
+    .replace('Overlay.highlightNode','DOM.highlightNode')
+    .replace('Overlay.hideHighlight','DOM.hideHighlight')
+    
     if (this._connected)
       this._socket.send(message);
     else

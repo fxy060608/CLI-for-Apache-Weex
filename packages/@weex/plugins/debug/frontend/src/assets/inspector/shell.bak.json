@@ -34,6 +34,7 @@
     { "name": "javascript_metadata" },
     { "name": "object_ui" },
     { "name": "perf_ui" },
+    { "name": "profiler" },
     { "name": "quick_open" },
     { "name": "search" },
     { "name": "settings" },

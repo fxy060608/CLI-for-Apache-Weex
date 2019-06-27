@@ -31,7 +31,6 @@ frontend/src/util/env.js
 
 
 
-sourcemap
-element
-uni 全局调用
-network
+src/assets/inspector/shell.json  memory { "name": "profiler" } 
+
+src/assets/inspector/devtools_app.json network { "name": "network" }

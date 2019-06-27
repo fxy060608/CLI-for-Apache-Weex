@@ -13,7 +13,8 @@
     { "name": "har_importer" },
     { "name": "help" },
     { "name": "layers" },
-    { "name": "layer_viewer" }
+    { "name": "layer_viewer" },
+    { "name": "network" }
   ],
   "extends": "shell",
   "has_html": true

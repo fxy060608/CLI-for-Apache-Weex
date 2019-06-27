@@ -6,7 +6,7 @@ const headless = require('./server/headless')
 const config = require('./config')
 const debugServer = require('./server')
 const mlink = require('./link')
-const { launcher } = require('./util')
+// const { launcher } = require('./util')
 const Router = mlink.Router
 
 const { logger, util } = require('./util')
@@ -51,7 +51,7 @@ ${chalk.bold('Debug Server:')} ${chalk.grey(`http://${config.ip}:${config.port}/
 }
 
 exports.launch = function (ip, port) {
-  const debuggerURL = 'http://' + (ip || 'localhost') + ':' + port + '/'
+  // const debuggerURL = 'http://' + (ip || 'localhost') + ':' + port + '/'
   logger.info('Launching Dev Tools...')
   if (config.ENABLE_HEADLESS) {
     // Check whether the port is occupied
