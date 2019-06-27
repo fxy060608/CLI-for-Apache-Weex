@@ -153,7 +153,8 @@ Screencast.ScreencastView = class extends UI.VBox {
    */
   _screencastFrame(base64Data, metadata) {
     this._imageElement.onload = () => {
-      this._pageScaleFactor = metadata.pageScaleFactor;
+      //fixed by xxxxxx Android 莫名其妙 pageScaleFactor 不正确
+      this._pageScaleFactor = metadata.pageDCScaleFactor || metadata.pageScaleFactor;
       this._screenOffsetTop = metadata.offsetTop;
       this._scrollOffsetX = metadata.scrollOffsetX;
       this._scrollOffsetY = metadata.scrollOffsetY;
