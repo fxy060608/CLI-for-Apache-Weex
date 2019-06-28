@@ -1,6 +1,6 @@
 {
   "name": "@dcloudio/uni-debugger",
-  "version": "0.0.116",
+  "version": "0.0.118",
   "description": "uni-app debugger",
   "main": "index.js",
   "scripts": {
@@ -42,7 +42,6 @@
     "koa-static": "^5.0.0",
     "koa-websocket": "^5.0.1",
     "parse-hosts": "^1.0.1",
-    "puppeteer": "^1.18.1",
     "puppeteer-cn": "^0.1.8",
     "uuid": "^3.3.2",
     "yargs-parser": "^13.1.1"
