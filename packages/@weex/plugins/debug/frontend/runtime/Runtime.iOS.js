@@ -63,7 +63,7 @@ __EventEmitter__.prototype = {
     }
 };
 
-// Redefine navigator 
+// Redefine navigator
 Object.defineProperty(navigator, 'appCodeName', {
     get: function() {
         return 'WeexPlayground';
@@ -260,6 +260,19 @@ self.callAddElement = function(instance, ref, dom, index, callback) {
     };
     __postData__(payload);
 };
+
+self.callUpdateStyle = function(instance, ref, data) {
+    var payload = {
+        method: 'WxDebug.callUpdateStyle',
+        params: {
+            instance: instance,
+            ref: ref,
+            data: data
+        }
+    };
+    __postData__(payload);
+}
+
 
 self.__updateComponentData = function(instance, componentId, data) {
     var payload = {
