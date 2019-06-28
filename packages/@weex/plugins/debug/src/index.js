@@ -19,6 +19,15 @@ function resolveConnectUrl (config) {
   )
 }
 
+process.env.PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = true
+
+process.on('unhandledRejection', (err, p) => {
+  if (err && err.message && err.message.indexOf('Chromium revision is not downloaded') !== -1) {
+    console.error('uni-app 真机调试缺少 Google Chrome，请手动下载安装：https://www.google.cn/intl/zh-CN/chrome/')
+    process.exit()
+  }
+})
+
 exports.startServerAndLaunch = function (config, cb) {
   this.startServer(config).then(() => {
     cb && cb()
