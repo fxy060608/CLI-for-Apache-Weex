@@ -262,15 +262,7 @@ self.callAddElement = function(instance, ref, dom, index, callback) {
 };
 
 self.callUpdateStyle = function(instance, ref, data) {
-    var payload = {
-        method: 'WxDebug.callUpdateStyle',
-        params: {
-            instance: instance,
-            ref: ref,
-            data: data
-        }
-    };
-    __postData__(payload);
+  self.callNative(instance,[{ module: 'dom', method: 'updateStyle', args: [ref,data] }],-1)
 }
 
 
