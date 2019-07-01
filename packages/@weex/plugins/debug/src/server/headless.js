@@ -7,6 +7,7 @@ exports.launchHeadless = async (host, remotePort) => {
   browser = await puppeteer.launch({
     args: [`--remote-debugging-port=${remotePort}`, `--disable-gpu`]
   })
+  logger.info(`pid=${browser.process().pid}`)
   logger.verbose(`Headless has been launched`)
   page = await browser.newPage()
   await page.setUserAgent(
