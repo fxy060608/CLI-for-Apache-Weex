@@ -54,7 +54,7 @@ Elements.ElementsPanel = class extends UI.Panel {
     //fixed by xxxxxx
     var tipsElement = createElement('div');
     tipsElement.setAttribute('style','overflow: hidden;flex: 0 0 27px;border-bottom: 1px solid #ccc;height: 26px;line-height: 26px;margin-top: -2px;padding-left: 15px;background-color: var(--toolbar-bg-color);');
-    tipsElement.innerText='目前仅支持nvue页面查看元素，vue页面暂不支持，Android暂不支持查看style。'
+    tipsElement.innerText='目前仅支持nvue页面查看元素，vue页面暂不支持。'
     this._contentElement.appendChild(tipsElement);
 
     const crumbsContainer = createElement('div');
